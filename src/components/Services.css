@@ -1,0 +1,208 @@
+.services {
+  position: relative;
+  padding: 6rem 2rem;
+  z-index: 1;
+}
+
+.services-title {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 4rem;
+  text-shadow: 0 0 20px rgba(100, 200, 255, 0.3);
+}
+
+.services-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+}
+
+.service-card {
+  background: rgba(20, 30, 60, 0.6);
+  border: 1px solid rgba(100, 200, 255, 0.3);
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  border-color: rgba(100, 200, 255, 0.6);
+  box-shadow: 0 10px 40px rgba(100, 200, 255, 0.2);
+}
+
+.service-image {
+  width: 100%;
+  height: 250px;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  position: relative;
+  background: rgba(10, 14, 39, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-image-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  /* Image is set via inline style with background-image */
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.security-scan-img {
+  background: linear-gradient(135deg, rgba(10, 14, 39, 0.95) 0%, rgba(20, 30, 60, 0.95) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.laptop-icon {
+  font-size: 4rem;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 0 10px rgba(100, 200, 255, 0.5));
+}
+
+.scan-animation {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 3px solid rgba(100, 200, 255, 0.5);
+  border-radius: 12px;
+  z-index: 1;
+}
+
+.code-lines {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.code-line {
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #64c8ff, transparent);
+  border-radius: 2px;
+}
+
+.threat-defense-img {
+  background: linear-gradient(135deg, rgba(10, 14, 39, 0.95) 0%, rgba(20, 30, 60, 0.95) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.monitor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+
+.monitor {
+  background: rgba(20, 30, 60, 0.8);
+  border: 1px solid rgba(100, 200, 255, 0.3);
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.monitor-screen {
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 14, 39, 0.9);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.graph-lines {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.privacy-compliance-img {
+  background: linear-gradient(135deg, rgba(10, 14, 39, 0.95) 0%, rgba(20, 30, 60, 0.95) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.shield-icon-large {
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 0 20px rgba(100, 200, 255, 0.6));
+}
+
+.document-icons {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.document-icon {
+  font-size: 1.5rem;
+  filter: drop-shadow(0 0 5px rgba(100, 200, 255, 0.5));
+}
+
+.service-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.service-card-description {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.service-btn {
+  padding: 0.8rem 2rem;
+  background: linear-gradient(135deg, #7ef9a3 0%, #f9f97e 100%);
+  border: none;
+  color: #0a0e27;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(126, 249, 163, 0.3);
+}
+
+@media (max-width: 768px) {
+  .services-title {
+    font-size: 2rem;
+  }
+
+  .services-container {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,469 @@
+.chatbot {
+  position: relative;
+  padding: 4rem 1rem; /* reduced padding for compact layout */
+  z-index: 1;
+}
+
+/* full page moving background */
+body {
+  margin: 0;
+  padding: 0;
+  background: url("../assets/images/bg.png") no-repeat center center/cover;
+  animation: bgmove 120s linear infinite;
+}
+
+@keyframes bgmove {
+  0% {
+    background-position: 0 0;
+  }
+  25% {
+    background-position: 25% 25%;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
+  75% {
+    background-position: 25% 75%;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.chatbot-container {
+  max-width: 900px; /* slightly narrower for balance */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.use-chatbot-btn {
+  margin-top: 1rem;
+  padding: 1.2rem 2.5rem; /* bigger button */
+  background: linear-gradient(135deg, #7ef9a3 0%, #64c8ff 100%);
+  border: none;
+  border-radius: 12px;
+  color: #0a0e27;
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 6px 25px rgba(126, 249, 163, 0.5);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+  align-self: center;
+}
+
+.use-chatbot-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 30px rgba(126, 249, 163, 0.7);
+}
+
+.use-chatbot-btn:active {
+  transform: scale(0.95);
+}
+
+.chatbot-header {
+  text-align: center;
+  z-index: 2;
+}
+
+.chatbot-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 20px rgba(100, 200, 255, 0.3);
+}
+
+.chatbot-subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.chatbot-subtitle strong {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.chatbot-interface-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.options-and-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.chatbot-interface {
+  background: rgba(20, 30, 60, 0.7);
+  border: 1px solid rgba(100, 200, 255, 0.3);
+  border-radius: 20px;
+  padding: 1.5rem; /* tighter padding */
+  backdrop-filter: blur(10px);
+  width: 100%;
+  max-width: 800px; /* smaller for balance */
+  box-shadow: 0 0 20px rgba(100, 200, 255, 0.1);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem; /* more space between left & right */
+  align-items: center;
+}
+
+.chat-interface-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* center all child elements */
+  text-align: center;
+}
+
+.chat-message {
+  width: 100%;
+}
+
+.message-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.question-icon {
+  font-size: 2rem;
+  filter: drop-shadow(0 0 10px rgba(100, 200, 255, 0.5));
+}
+
+.message-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.chat-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* more breathing room */
+}
+
+.chat-option {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.4rem 2rem; /* larger cards */
+  min-height: 60px;
+  background: rgba(10, 14, 39, 0.6);
+  border: 1px solid rgba(100, 200, 255, 0.3);
+  border-radius: 12px;
+  color: #ffffff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.chat-option:hover {
+  background: rgba(100, 200, 255, 0.1);
+  border-color: rgba(100, 200, 255, 0.6);
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(100, 200, 255, 0.5);
+}
+
+.chat-option.selected {
+  background: rgba(100, 200, 255, 0.2);
+  border-color: #64c8ff;
+  box-shadow: 0 0 20px rgba(100, 200, 255, 0.3);
+}
+
+.option-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(126, 249, 163, 0.6);
+}
+
+.option-dot.blue {
+  background: #64c8ff;
+  box-shadow: 0 0 10px rgba(100, 200, 255, 0.6);
+}
+
+.option-dot.green {
+  background: linear-gradient(135deg, #7ef9a3 0%, #f9f97e 100%);
+  box-shadow: 0 0 10px rgba(126, 249, 163, 0.6);
+}
+
+.chatbot-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 2rem;
+  z-index: 2;
+}
+
+.robo2-img {
+  width: 100%;
+  max-width: 840px; /* 20% larger */
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 50px rgba(100, 200, 255, 0.6));
+  animation: float 6s ease-in-out infinite;
+}
+
+@media (max-width: 1024px) {
+  .chatbot-interface {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .chatbot-title {
+    font-size: 2.5rem;
+  }
+
+  /* stack illustration below content */
+  .chatbot-visual {
+    height: auto;
+    order: 0;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .chatbot-title {
+    font-size: 2rem;
+  }
+
+  .chatbot-interface {
+    padding: 1.5rem;
+  }
+
+  .use-chatbot-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* glass card container */
+.chatbot-card {
+  background: rgba(10, 10, 20, 0.4);
+  border: 1px solid rgba(100, 200, 255, 0.3);
+  backdrop-filter: blur(20px);
+  border-radius: 30px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+  padding: 2.5rem;
+  position: relative;
+}
+
+/* bubble styles */
+.chat-bubbles {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+.bot-bubble,
+.user-bubble {
+  max-width: 70%;
+  padding: 1rem 1.5rem;
+  border-radius: 20px;
+  position: relative;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.bot-bubble {
+  align-self: flex-start;
+  background: linear-gradient(
+    135deg,
+    rgba(100, 200, 255, 0.3) 0%,
+    rgba(50, 50, 70, 0.6) 100%
+  );
+  color: #e0eaff;
+  box-shadow: 0 4px 20px rgba(100, 200, 255, 0.3);
+}
+
+.user-bubble {
+  align-self: flex-end;
+  background: linear-gradient(
+    135deg,
+    rgba(126, 249, 163, 0.3) 0%,
+    rgba(30, 30, 50, 0.6) 100%
+  );
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(126, 249, 163, 0.3);
+}
+
+.typing-indicator {
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+.typing-indicator span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 2px;
+  background: #64c8ff;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: blink 1.4s infinite both;
+}
+
+.typing-indicator span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.typing-indicator span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes blink {
+  0%,
+  80%,
+  100% {
+    opacity: 0.6;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+/* background stars and nebula */
+.chatbot {
+  background: linear-gradient(135deg, #0a0f25 0%, #1a1e3a 100%);
+  overflow: hidden;
+}
+
+.chatbot::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/src/assets/images/stars.png") repeat;
+  opacity: 0.2;
+  z-index: 0;
+}
+
+.chatbot::after {
+  content: "";
+  position: absolute;
+  top: -20%;
+  left: -10%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(
+    circle at center,
+    rgba(100, 200, 255, 0.1) 0%,
+    transparent 70%
+  );
+  filter: blur(100px);
+  z-index: 0;
+}
+
+/* particles and ambient glow */
+.particles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(100, 200, 255, 0.7);
+  animation: float 8s infinite ease-in-out;
+}
+
+.particle:nth-child(1) {
+  top: 20%;
+  left: 15%;
+  animation-delay: 0s;
+}
+.particle:nth-child(2) {
+  top: 10%;
+  left: 70%;
+  animation-delay: 2s;
+}
+.particle:nth-child(3) {
+  top: 80%;
+  left: 30%;
+  animation-delay: 4s;
+}
+.particle:nth-child(4) {
+  top: 60%;
+  left: 85%;
+  animation-delay: 1s;
+}
+.particle:nth-child(5) {
+  top: 40%;
+  left: 50%;
+  animation-delay: 3s;
+}
+.particle:nth-child(6) {
+  top: 75%;
+  left: 20%;
+  animation-delay: 5s;
+}
+
+.chatbot-visual::before {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    circle at center,
+    rgba(100, 200, 255, 0.4) 0%,
+    transparent 60%
+  );
+  filter: blur(80px);
+  z-index: 0;
+  animation: pulse 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+}

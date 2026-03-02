@@ -1,0 +1,148 @@
+.about {
+  position: relative;
+  padding: 6rem 2rem;
+  z-index: 1;
+}
+
+.about-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shield-large {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.shield-img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 60px rgba(100, 200, 255, 0.7));
+  /* Keep it still - no animations */
+}
+
+.about-content {
+  z-index: 2;
+}
+
+.about-label-wrapper {
+  margin-bottom: 1rem;
+}
+
+.about-label {
+  font-size: 0.9rem;
+  color: #64c8ff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 0;
+}
+
+.about-title-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.about-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.about-title-subtitle {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.about-description {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.about-stats-container {
+  margin-bottom: 2.5rem;
+}
+
+.about-stats-box {
+  display: flex;
+  gap: 2rem;
+  background: rgba(20, 30, 60, 0.7);
+  border: 1px solid rgba(100, 200, 255, 0.4);
+  border-radius: 16px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 30px rgba(100, 200, 255, 0.2);
+}
+
+.about-stat {
+  flex: 1;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.about-stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #64c8ff;
+  margin-bottom: 0.5rem;
+}
+
+.about-stat-label {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.btn-explore {
+  padding: 1.1rem 2.8rem;
+  background: linear-gradient(90deg, #7ef9a3 0%, #00ffff 100%);
+  border: none;
+  color: #0a0e27;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(126, 249, 163, 0.3);
+}
+
+@media (max-width: 1024px) {
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .about-stats-box {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-stats {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}

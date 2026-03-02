@@ -1,0 +1,144 @@
+.image-test-page {
+  padding: 2rem;
+  background: #0a0e27;
+  color: white;
+  min-height: 100vh;
+}
+
+.image-test-page h1 {
+  margin-bottom: 1rem;
+  color: #64c8ff;
+}
+
+.image-test-page h2 {
+  margin: 2rem 0 1rem;
+  color: #9d7aff;
+}
+
+.image-test-page h3 {
+  margin: 1.5rem 0 1rem;
+  color: #7ef9a3;
+}
+
+.test-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.collage-preview {
+  position: sticky;
+  top: 2rem;
+  height: fit-content;
+}
+
+.full-collage {
+  width: 100%;
+  height: auto;
+  border: 2px solid #64c8ff;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.crops-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.crop-group {
+  background: rgba(20, 30, 60, 0.6);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid rgba(100, 200, 255, 0.3);
+}
+
+.crop-item {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: rgba(10, 14, 39, 0.8);
+  border-radius: 8px;
+}
+
+.crop-item label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #64c8ff;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.controls input[type="range"] {
+  flex: 1;
+  height: 6px;
+  background: rgba(100, 200, 255, 0.2);
+  border-radius: 3px;
+  outline: none;
+}
+
+.controls input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #64c8ff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.controls input[type="range"]::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: #64c8ff;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+.controls span {
+  min-width: 60px;
+  font-family: monospace;
+  color: #7ef9a3;
+}
+
+.crop-preview {
+  width: 100%;
+  height: 200px;
+  border: 2px solid rgba(100, 200, 255, 0.5);
+  border-radius: 8px;
+  margin: 1rem 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.crop-preview.small {
+  height: 100px;
+}
+
+.crop-item code {
+  display: block;
+  padding: 0.5rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  color: #7ef9a3;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+  .test-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .collage-preview {
+    position: relative;
+    top: 0;
+  }
+}
