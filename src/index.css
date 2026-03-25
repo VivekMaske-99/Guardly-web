@@ -1,9 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* ================= BODY ================= */
 body {
   font-family:
     "Inter",
@@ -11,43 +17,96 @@ body {
     BlinkMacSystemFont,
     "Segoe UI",
     "Roboto",
-    "Oxygen",
-    "Ubuntu",
-    "Cantarell",
-    "Fira Sans",
-    "Droid Sans",
-    "Helvetica Neue",
     sans-serif;
+
+  overflow-x: hidden;
+
+  /* ✅ FIX: prevent white flash */
+  background-color: #0F1419;
+  color: white;
+
+  /* ✅ smooth rendering */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden;
 }
 
+/* ================= ROOT ================= */
 #root {
   width: 100%;
   min-height: 100vh;
+
+  /* ❌ REMOVE flex-direction without flex */
+  display: block;
 }
 
-/* moving page background */
-body {
-  background: url("/src/assets/images/bg.png") no-repeat center center/cover;
-  animation: bgmove 120s linear infinite;
+/* ================= MAIN CONTAINER ================= */
+/* ✅ USE THIS for pages if needed */
+.main-container {
+  width: 100%;
+  /* max-width: 1400px; */
+  margin: auto;
+  padding: 0 16px;
 }
 
+/* ================= GLASS CARD ================= */
+.glass-card {
+  background: rgba(17, 24, 39, 0.9);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  min-height: 120px;
+}
+
+/* ================= SCROLLBAR (PREMIUM LOOK) ================= */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0F1419;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #64c8ff, #9d7aff);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #7dd3fc, #a78bfa);
+}
+
+/* ================= BACKGROUND ANIMATION ================= */
 @keyframes bgmove {
-  0% {
-    background-position: 0 0;
-  }
-  25% {
-    background-position: 25% 25%;
-  }
-  50% {
-    background-position: 50% 50%;
-  }
-  75% {
-    background-position: 25% 75%;
-  }
-  100% {
-    background-position: 0 0;
-  }
+  0% { background-position: 0 0; }
+  50% { background-position: 50% 50%; }
+  100% { background-position: 0 0; }
+}
+
+/* ================= UTILITY FIXES ================= */
+
+/* ✅ Prevent image overflow issues */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ✅ Fix button/input default styles */
+button,
+input,
+textarea {
+  font-family: inherit;
+  outline: none;
+  border: none;
+}
+
+/* ✅ Links */
+a {
+  text-decoration: none;
+  color: inherit;
 }
