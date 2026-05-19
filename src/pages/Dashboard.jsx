@@ -64,7 +64,7 @@ export default function Dashboard() {
   useEffect(() => {
     loadDashboard();
 
-    const socket = io("http://localhost:5000");
+    const socket = io(`${import.meta.env.VITE_API_URL}`);
 
     socket.on("threatDetected", (data) => {
       if (data.userId === userId) {

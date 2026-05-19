@@ -107,57 +107,105 @@
 /* AUTH */
 .nav-auth {
   display: flex;
-  gap: 1rem;
+  gap: 1.2rem;
+  align-items: center;
 }
 
 .btn-signin {
-  padding: 0.6rem 1.5rem;
+  padding: 0.65rem 1.8rem;
   background: transparent;
-  border: 1px solid #64c8ff;
+  border: 1.5px solid #64c8ff;
   color: #64c8ff;
   border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 0.95rem;
 }
 
 .btn-signin:hover {
-  background: rgba(100, 200, 255, 0.1);
-  box-shadow: 0 0 15px rgba(100, 200, 255, 0.4);
+  background: rgba(100, 200, 255, 0.15);
+  box-shadow: 0 0 20px rgba(100, 200, 255, 0.5);
+  transform: translateY(-2px);
 }
 
 .btn-signup {
-  padding: 0.6rem 1.5rem;
+  padding: 0.65rem 1.8rem;
   border: none;
   border-radius: 8px;
-
-  background: linear-gradient(135deg, #7ef9a3, #f9f97e);
+  background: linear-gradient(135deg, #64c8ff, #9d7aff);
   color: #0a0e27;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  font-weight: 700;
+  font-size: 0.95rem;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn-signup:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 20px rgba(126, 249, 163, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(100, 200, 255, 0.4);
 }
+
+.btn-signup:active {
+  transform: translateY(-1px);
+}
+
+/* USER PROFILE */
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.6rem 1rem;
+  background: rgba(100, 200, 255, 0.08);
+  border: 1px solid rgba(100, 200, 255, 0.2);
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.user-profile:hover {
+  background: rgba(100, 200, 255, 0.15);
+  border-color: rgba(100, 200, 255, 0.4);
+  box-shadow: 0 0 15px rgba(100, 200, 255, 0.2);
+}
+
+.user-avatar {
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .user-name {
   color: #64c8ff;
-  font-weight: 600;
-  margin-right: 10px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
 }
 
 .btn-signout {
-  padding: 0.6rem 1.5rem;
-  background: rgba(255, 0, 0, 0.2);
-  border: 1px solid red;
-  color: white;
+  padding: 0.65rem 1.8rem;
+  background: transparent;
+  border: 1.5px solid #ff6b6b;
+  color: #ff8787;
   border-radius: 8px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 0.95rem;
 }
 
 .btn-signout:hover {
-  background: rgba(255, 0, 0, 0.4);
+  background: rgba(255, 107, 107, 0.15);
+  box-shadow: 0 0 20px rgba(255, 107, 107, 0.4);
+  transform: translateY(-2px);
+  color: #ff9999;
+}
+
+.btn-signout:active {
+  transform: translateY(0);
 }
 
 /* MOBILE */

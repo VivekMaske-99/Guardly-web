@@ -93,10 +93,13 @@ const Navbar = () => {
 
           {getToken() ? (
             <>
-              {/* ✅ FIXED: SHOW NAME ONLY */}
-              <span className="user-name">
-                👤 {user?.name || "User"}
-              </span>
+              {/* USER PROFILE */}
+              <div className="user-profile">
+                <div className="user-avatar">👤</div>
+                <span className="user-name">
+                  {user?.name || "User"}
+                </span>
+              </div>
 
               <motion.button
                 className="btn-signout"

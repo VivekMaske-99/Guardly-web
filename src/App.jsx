@@ -13,6 +13,7 @@ import Scan from "./pages/Scan";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
+import ChatbotPage from "./pages/Chatbot";
 
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -22,7 +23,7 @@ import "./App.css";
 function Home() {
   return (
     <>
-      <AnimatedBackground />
+      
       <Hero />
       <About />
       <Services />
@@ -36,11 +37,16 @@ function Home() {
 function Layout() {
   const location = useLocation();
 
-  // ❌ Hide navbar on dashboard
-  const hideNavbar = location.pathname === "/dashboard";
+  const isHome = location.pathname === "/";
+  
+  const hideNavbar =
+  location.pathname === "/dashboard";
 
   return (
     <>
+      {/* ✅ SHOW BACKGROUND ONLY ON HOME */}
+      {isHome && <AnimatedBackground />}
+
       {!hideNavbar && <Navbar />}
 
       <Routes>
@@ -64,6 +70,15 @@ function Layout() {
           element={
             <ProtectedRoute>
               <Dashboard />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="/chatbot"
+          element={
+            <ProtectedRoute>
+              <ChatbotPage />
             </ProtectedRoute>
           }
         />

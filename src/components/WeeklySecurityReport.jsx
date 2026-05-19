@@ -1,11 +1,11 @@
 export default function WeeklySecurityReport({ userId }) {
 
   const downloadPDF = () => {
-    window.open(`http://localhost:5000/api/report/pdf/${userId}`);
+    window.open(`${import.meta.env.VITE_API_URL}/report/pdf/${userId}`);
   };
 
   const downloadDOC = () => {
-    window.open(`http://localhost:5000/api/report/doc/${userId}`);
+    window.open(`${import.meta.env.VITE_API_URL}/report/doc/${userId}`);
   };
 
   return (

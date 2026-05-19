@@ -1,8 +1,8 @@
-const BASE_URL = "http://localhost:5000/api";
+const BASE_URL = import.meta.env.VITE_API_URL;
 
 const getToken = () => localStorage.getItem("token");
 
-// 🔥 GET ALL SCAN DATA (MAIN SOURCE)
+// GET ALL SCAN DATA (MAIN SOURCE)
 export const getDashboardData = async () => {
   const res = await fetch(`${BASE_URL}/scan/history`, {
     headers: {
@@ -13,8 +13,6 @@ export const getDashboardData = async () => {
   return res.json();
 };
 
-// 🔥 TRANSFORM FUNCTIONS (VERY IMPORTANT)
-
 // Overview
 export const getOverview = async () => {
   const data = await getDashboardData();
@@ -22,8 +20,8 @@ export const getOverview = async () => {
   const latest = data[0] || {};
 
   return {
-    riskScore: latest.riskLevel || 0,
-    securityHealth: 100 - (latest.riskLevel || 0),
+    riskScore: latest.riskScore || 0,
+    securityHealth: 100 - (latest.riskScore || 0),
     recentEvents: data,
     alerts: data.filter(item => item.severity === "High")
   };
@@ -75,6 +73,7 @@ export const getAlerts = async () => {
 // AI Insight
 export const getInsight = async () => {
   return {
-    insight: "Your system is secure. Monitor high-risk threats regularly."
+    insight:
+      "Your system is secure. Monitor high-risk threats regularly."
   };
 };

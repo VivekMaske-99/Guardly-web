@@ -50,43 +50,61 @@ const Scan = () => {
   }, []);
 
   /* ================= FILE SCAN ================= */
-  const handleFileScan = async () => {
-    try {
-      if (!file) return alert("Select file");
+  // 🔥 IMPORTANT FIXES ONLY
 
-      setLoading(true);
-      setResult(null);
+const handleFileScan = async () => {
+  try {
+    if (!file) {
+      alert("Select file");
+      return;
+    }
 
-      const token = localStorage.getItem("token");
+    setLoading(true);
+    setResult(null);
 
-      const formData = new FormData();
-      formData.append("document", file);
+    const token = localStorage.getItem("token");
 
-      const res = await fetch("http://localhost:5000/api/scan/upload", {
+    if (!token) {
+      alert("Please login first");
+      return;
+    }
+
+    // FIX: formData was missing
+    const formData = new FormData();
+    formData.append("document", file);
+
+    const res = await fetch(
+      `${import.meta.env.VITE_API_URL}/scan/upload`,
+      {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
         },
         body: formData,
-      });
-
-      const text = await res.text();
-      const data = JSON.parse(text);
-
-      if (data.error) {
-        alert(data.error);
-        return;
       }
+    );
 
-      setResult(data.data || data);
+    const data = await res.json();
 
-    } catch (err) {
-      console.error(err);
-      alert("Scan failed");
-    } finally {
-      setLoading(false);
+    console.log("UPLOAD RESPONSE:", data);
+
+    if (!res.ok) {
+      alert(data.message || "Scan failed");
+      return;
     }
-  };
+
+    setResult({
+      ...data.data,
+      scanId: data.scanId,
+    });
+
+  } catch (err) {
+    console.error(err);
+    alert("Scan failed");
+  } finally {
+    setLoading(false);
+  }
+};
   const detectedCount = Object.values(result?.detected || {}).filter(
   (v) => v === 1
 ).length;
@@ -117,7 +135,7 @@ const getRecommendations = () => {
 
 const handleDownloadReport = async () => {
   try {
-    const res = await fetch("http://localhost:5000/api/report/ai-scan", {
+    const res = await fetch(`${import.meta.env.VITE_API_URL}/report/ai-scan`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -153,7 +171,7 @@ const handleRedact = async () => {
     const token = localStorage.getItem("token");
 
     const res = await fetch(
-      `http://localhost:5000/api/scan/redact/${result.scanId}`,
+      `${import.meta.env.VITE_API_URL}/scan/redact/${result.scanId}`,
       {
         method: "GET",
         headers: {
@@ -162,19 +180,10 @@ const handleRedact = async () => {
       }
     );
 
-    // 🔥 IMPORTANT FIX (NOT JSON)
-  const blob = await res.blob();
-const url = window.URL.createObjectURL(blob);
+    const blob = await res.blob();
+    const url = window.URL.createObjectURL(blob);
 
-// 🔥 OPEN IN NEW TAB (FIXES ERROR)
-window.open(url, "_blank");
-
-const a = document.createElement("a");
-a.href = url;
-a.download = "redacted.pdf";
-a.click();
-
-    window.URL.revokeObjectURL(url);
+    window.open(url, "_blank");
 
   } catch (err) {
     console.error(err);
@@ -256,7 +265,7 @@ a.click();
       strokeWidth="8"
       fill="none"
       strokeDasharray="314"
-      strokeDashoffset={314 - (result?.riskScore / 100) * 314}
+      strokeDashoffset={314 - ((result?.riskScore || 0) / 100) * 314}
       strokeLinecap="round"
       transform="rotate(-90 60 60)"
     />
@@ -470,7 +479,7 @@ const reportContainer = {
   gap: "30px",
   width: "100%",
   maxWidth: "1100px",
-  marginTop: "40px",
+  margin: "40px auto 0",
   alignItems: "stretch", // 🔥 fix height
 };
 
