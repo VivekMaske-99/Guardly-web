@@ -1,3 +1,5 @@
+
+
 # 🛡️ GuardLY – AI Privacy Risk Analyzer
 
 > An AI-powered privacy analysis platform that helps users identify privacy risks in documents and text by providing actionable insights, risk scores, and recommendations.
@@ -122,31 +124,30 @@ GuardLY
 
 ---
 
-# 📸 Screenshots
+<details>
+<summary>📸 View Application Screenshots</summary>
 
-### Home Page
+### 🏠 Home Page
 
-![Home](docs/screenshots/home.png)
+<img src="https://github.com/user-attachments/assets/aee22246-2464-46a0-b649-8c94aebe25a7" width="900">
 
----
+### 🔐 Login Page
 
-### Dashboard
+<img src="https://github.com/user-attachments/assets/28dbed3f-3e26-405a-b973-7174901c2c1c" width="900">
 
-![Dashboard](docs/screenshots/dashboard.png)
+### 📊 Dashboard
 
----
+<img src="https://github.com/user-attachments/assets/bfa1ca2f-f94d-419a-b3b4-14c958ef3755" width="900">
 
-### Privacy Report
+### 🤖 AI Chat Assistant
 
-![Report](docs/screenshots/report.png)
+<img src="https://github.com/user-attachments/assets/2b948257-f0c1-4c44-8cee-fb3411e57b3c" width="900">
 
----
+### 📄 Privacy Analysis Report
 
-### Scan History
+<img src="https://github.com/user-attachments/assets/92ca38f0-1b03-4fc2-8f43-51089c9b6f50" width="700">
 
-![History](docs/screenshots/history.png)
-
----
+</details>
 
 # ⚙ Installation
 
