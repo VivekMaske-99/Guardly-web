@@ -1,128 +1,255 @@
-# GuardDLY - AI-Powered Cybersecurity Platform
+# 🛡️ GuardLY – AI Privacy Risk Analyzer
 
-A modern, animated React web application for GuardDLY, featuring AI-powered cybersecurity solutions with a futuristic dark theme and interactive animations.
+> An AI-powered privacy analysis platform that helps users identify privacy risks in documents and text by providing actionable insights, risk scores, and recommendations.
 
-## Features
+![GuardLY Banner](./docs/screenshots/banner.png)
 
-- 🎨 **Animated Background**: Live, moving circuit board patterns with particle effects
-- 🛡️ **Interactive Components**: Animated AI heads, shields, and visual elements
-- 📱 **Responsive Design**: Works seamlessly on desktop, tablet, and mobile devices
-- 🎭 **Smooth Animations**: Powered by Framer Motion for fluid interactions
-- 🌐 **Modern UI/UX**: Dark theme with glowing blue/purple accents
+<p align="center">
 
-## Sections
+![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/Express.js-000000?logo=express)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?logo=mongodb&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-000000?logo=jsonwebtokens)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-06B6D4?logo=tailwindcss&logoColor=white)
 
-1. **Hero Section**: Main landing area with headline, CTA buttons, and animated AI head
-2. **About GuardDLY**: Information about the platform with animated shield visualization
-3. **Cybersecurity Services**: Three service cards with animated illustrations
-4. **AI Privacy Assistant**: Interactive chatbot interface with animated AI head
-5. **Contact**: Contact form for user inquiries
+</p>
 
-## Navigation
+---
 
-The navbar includes:
+## 🔗 Live Demo
 
-- Home
-- Scan
-- Chatbot
-- Contact
-- Sign In
-- Sign Up
+🌐 https://guardly-web.vercel.app
 
-## Getting Started
+## 💻 Source Code
 
-### Prerequisites
+📂 https://github.com/YOUR_USERNAME/guardly
 
-- Node.js (v16 or higher)
-- npm or yarn
+---
 
-### Installation
+# 📖 Overview
 
-1. Install dependencies:
+GuardLY is a full-stack web application that analyzes user-uploaded content for privacy risks using AI. The platform scans text or documents, detects sensitive information, generates a privacy risk score, and provides recommendations to help users protect their personal data.
 
-```bash
-npm install
-```
+The application features secure authentication, interactive dashboards, activity history, and AI-powered privacy analysis in an intuitive and responsive interface.
 
-2. Start the development server:
+---
 
-```bash
-npm run dev
-```
+# ✨ Features
 
-_If you're using the document scanning feature make sure the backend is
-running as well. The easiest way during development is to use the
-helper script below._
+- 🔐 Secure JWT Authentication
+- 📄 Document Privacy Analysis
+- 🤖 AI-powered Risk Detection
+- 📊 Privacy Score Dashboard
+- 🚨 Risk Alerts & Recommendations
+- 📂 Scan History
+- 👤 User Dashboard
+- 📱 Fully Responsive UI
+- 🔒 Protected Routes
+- ⚡ Fast and Modern User Experience
 
-3. You can also run both frontend and backend concurrently:
+---
 
-```bash
-npm run dev:all
-```
+# 🛠 Tech Stack
 
-4. Open your browser and navigate to `http://localhost:3000`
+## Frontend
 
-Once the application is built (`npm run build`) you can serve everything
-from a single Express process with:
+- React.js
+- Tailwind CSS
+- React Router
+- Axios
 
-```bash
-npm start
-```
+## Backend
 
-This will launch the React app on `/` and make the scanner UI+API
-available under `/doc-scan`.
+- Node.js
+- Express.js
+- JWT Authentication
+- REST APIs
 
-### Build for Production
+## Database
 
-```bash
-npm run build
-```
+- MongoDB
 
-The built files will be in the `dist` directory.
+## AI Integration
 
-## Technologies Used
+- Groq Cloud API
+- LLaMA Model
 
-- **React 18**: UI library
-- **Vite**: Build tool and dev server
-- **Framer Motion**: Animation library
-- **CSS3**: Styling with modern features
+## Deployment
 
-## Project Structure
+- Vercel
+- Render
+
+---
+
+# 📂 Project Structure
 
 ```
-frontend-G/
-├── src/
-│   ├── components/
-│   │   ├── Navbar.jsx
-│   │   ├── Hero.jsx
-│   │   ├── About.jsx
-│   │   ├── Services.jsx
-│   │   ├── Chatbot.jsx
-│   │   ├── Contact.jsx
-│   │   └── AnimatedBackground.jsx
-│   ├── App.jsx
-│   ├── App.css
-│   ├── main.jsx
-│   └── index.css
-├── index.html
-├── package.json
-├── vite.config.js
+GuardLY
+│
+├── frontend
+│   ├── src
+│   ├── components
+│   ├── pages
+│   ├── hooks
+│   └── services
+│
+├── backend
+│   ├── controllers
+│   ├── routes
+│   ├── middleware
+│   ├── models
+│   ├── config
+│   └── utils
+│
 └── README.md
 ```
 
-## Customization
+---
 
-- Colors can be adjusted in the CSS files (look for hex colors like `#64c8ff`, `#9d7aff`, `#7ef9a3`)
-- Animation speeds can be modified in component files (duration values in Framer Motion)
-- Background patterns can be customized in `AnimatedBackground.jsx`
+# 🏗 Architecture
 
-## Browser Support
+```
+              React Frontend
+                     │
+                     ▼
+             Express REST API
+                     │
+        ┌────────────┴────────────┐
+        ▼                         ▼
+   MongoDB Database         Groq AI API
+```
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+---
 
-## License
+# 📸 Screenshots
 
-This project is private and proprietary.
+### Home Page
+
+![Home](docs/screenshots/home.png)
+
+---
+
+### Dashboard
+
+![Dashboard](docs/screenshots/dashboard.png)
+
+---
+
+### Privacy Report
+
+![Report](docs/screenshots/report.png)
+
+---
+
+### Scan History
+
+![History](docs/screenshots/history.png)
+
+---
+
+# ⚙ Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/YOUR_USERNAME/guardly.git
+```
+
+## Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+## Backend
+
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+---
+
+# 🔑 Environment Variables
+
+Create a `.env` file in the backend folder.
+
+```env
+PORT=5000
+
+MONGO_URI=your_mongodb_connection
+
+JWT_SECRET=your_secret
+
+GROQ_API_KEY=your_api_key
+```
+
+---
+
+# 📡 API Endpoints
+
+## Authentication
+
+```
+POST /api/auth/register
+
+POST /api/auth/login
+```
+
+## Scan
+
+```
+POST /api/scan
+```
+
+## History
+
+```
+GET /api/history
+```
+
+---
+
+# 🚀 Future Improvements
+
+- Docker Support
+- AWS Deployment
+- OCR Document Scanning
+- Multi-language Analysis
+- Team Workspaces
+- Email Notifications
+- PDF Report Export
+
+---
+
+# 👨‍💻 Author
+
+**Vivek Maske**
+
+📧 vivekmaske998@gmail.com
+
+🔗 LinkedIn
+
+https://linkedin.com/in/vivekmaske99
+
+💻 GitHub
+
+https://github.com/VivekMaske-99
+
+---
+
+# ⭐ Support
+
+If you found this project useful, consider giving it a ⭐ on GitHub.
+
+It helps others discover the project and motivates further development.
+
+---
+
+# 📜 License
+
+This project is licensed under the MIT License.
